@@ -42,5 +42,25 @@
            timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="com.vcu.dbproj.domain.Patient"
+           timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.vcu.dbproj.domain.Employee"
+           timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.vcu.dbproj.domain.Room"
+           timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.vcu.dbproj.domain.Operation"
+           timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.vcu.dbproj.domain.Department"
+           timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

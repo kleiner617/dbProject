@@ -1,0 +1,163 @@
+package com.vcu.dbproj.domain;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * A Patient.
+ */
+@Entity
+@Table(name = "patient")
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+public class Patient implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "contact_no")
+    private String contactNo;
+
+    @NotNull
+    @Size(min = 8, max = 8)
+    @Column(name = "ssn", length = 8, nullable = false)
+    private String ssn;
+
+    @Column(name = "first_name")
+    private String first_name;
+
+    @Column(name = "last_name")
+    private String last_name;
+
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "gender")
+    private String gender;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public Patient contactNo(String contactNo) {
+        this.contactNo = contactNo;
+        return this;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public Patient ssn(String ssn) {
+        this.ssn = ssn;
+        return this;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public Patient first_name(String first_name) {
+        this.first_name = first_name;
+        return this;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public Patient last_name(String last_name) {
+        this.last_name = last_name;
+        return this;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Patient age(Integer age) {
+        this.age = age;
+        return this;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public Patient gender(String gender) {
+        this.gender = gender;
+        return this;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Patient patient = (Patient) o;
+        if(patient.id == null || id == null) {
+            return false;
+        }
+        return Objects.equals(id, patient.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+            "id=" + id +
+            ", contactNo='" + contactNo + "'" +
+            ", ssn='" + ssn + "'" +
+            ", first_name='" + first_name + "'" +
+            ", last_name='" + last_name + "'" +
+            ", age='" + age + "'" +
+            ", gender='" + gender + "'" +
+            '}';
+    }
+}

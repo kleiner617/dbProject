@@ -65,5 +65,9 @@
   },
   "scripts": {
     "test": "gulp test"
+  },
+  "dependencies": {
+    "@angular/animations": "^4.1.1",
+    "@angular/material": "^2.0.0-beta.3"
   }
 }

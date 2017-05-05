@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span>Employee</span> {{vm.employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Contact No</span></dt>
+        <dd>
+            <span>{{vm.employee.contactNo}}</span>
+        </dd>
+        <dt><span>Salary</span></dt>
+        <dd>
+            <span>{{vm.employee.salary}}</span>
+        </dd>
+        <dt><span data-translate="dbProjectApp.employee.first_name">First Name</span></dt>
+        <dd>
+            <span>{{vm.employee.first_name}}</span>
+        </dd>
+        <dt><span data-translate="dbProjectApp.employee.last_name">Last Name</span></dt>
+        <dd>
+            <span>{{vm.employee.last_name}}</span>
+        </dd>
+        <dt><span>Specialty</span></dt>
+        <dd>
+            <span>{{vm.employee.specialty}}</span>
+        </dd>
+        <dt><span>Ssn</span></dt>
+        <dd>
+            <span>{{vm.employee.ssn}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="employee-detail.edit({id:vm.employee.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
